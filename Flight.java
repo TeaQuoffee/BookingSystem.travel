@@ -3,12 +3,13 @@ public class Flight {
     private String destination;
     private int totalSeats;
     private int availableSeats;
+	private boolean[] seatsAvailable;
     
     public Flight(String flightNumber, String destination, int totalSeats) {
         this.flightNumber = flightNumber;
         this.destination = destination;
         this.totalSeats = totalSeats;
-        this.availableSeats = totalSeats; 
+        this.seatsAvailable = new boolean[totalSeats];
     }
     
     // Getter and Setter methods for flight details
@@ -44,15 +45,22 @@ public class Flight {
         this.availableSeats = availableSeats;
     }
 
-    public boolean bookSeat() {
-        if (availableSeats > 0) {
-            availableSeats--; 
-            System.out.println("Seat booked successfully on flight " + flightNumber);
-            return true;
-        } else {
-            System.out.println("No available seats on flight " + flightNumber);
-            return false;
+     public boolean bookSeat(int seatNumber) {
+        if (seatNumber >= 0 && seatNumber < totalSeats && !seatsAvailable[seatNumber]) {
+            seatsAvailable[seatNumber] = true;
+            return true;  
         }
+        return false;  
+    }
+
+    public boolean bookSeat() {
+        for (int i = 0; i < totalSeats; i++) {
+            if (!seatsAvailable[i]) {  
+                seatsAvailable[i] = true;
+                return true;  
+            }
+        }
+        return false; 
     }
 
     public void cancelBooking() {
