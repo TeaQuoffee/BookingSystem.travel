@@ -2,7 +2,6 @@
 ### Entities and their responsibilities
 - **Passenger**: Represent a customer booking flights
 - **Flight**: Contains flight details (flight number, destination, seats, etc.)
-- **Ticket**: Represents a purchased ticket.
 - **BookingSystem**: Manages flight schedules, ticket purchases, and check-ins.
 
 ### Collections Usage
