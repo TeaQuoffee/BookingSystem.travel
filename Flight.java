@@ -1,16 +1,14 @@
 public class Flight {
-    // Instance variables to store flight details
     private String flightNumber;
     private String destination;
     private int totalSeats;
     private int availableSeats;
     
-    // Constructor to initialize the flight details
     public Flight(String flightNumber, String destination, int totalSeats) {
         this.flightNumber = flightNumber;
         this.destination = destination;
         this.totalSeats = totalSeats;
-        this.availableSeats = totalSeats; // Initially, all seats are available
+        this.availableSeats = totalSeats; 
     }
     
     // Getter and Setter methods for flight details
@@ -46,10 +44,9 @@ public class Flight {
         this.availableSeats = availableSeats;
     }
 
-    // Method to book a seat on the flight
     public boolean bookSeat() {
         if (availableSeats > 0) {
-            availableSeats--; // Decrease available seats by 1 when booking
+            availableSeats--; 
             System.out.println("Seat booked successfully on flight " + flightNumber);
             return true;
         } else {
@@ -58,17 +55,15 @@ public class Flight {
         }
     }
 
-    // Method to cancel a booking (increases available seats)
     public void cancelBooking() {
         if (availableSeats < totalSeats) {
-            availableSeats++; // Increase available seats by 1
+            availableSeats++;
             System.out.println("Booking canceled successfully on flight " + flightNumber);
         } else {
             System.out.println("No bookings to cancel on flight " + flightNumber);
         }
     }
 
-    // Method to display flight details
     public void displayFlightDetails() {
         System.out.println("Flight Number: " + flightNumber);
         System.out.println("Destination: " + destination);
