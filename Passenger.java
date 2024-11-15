@@ -1,9 +1,8 @@
-import java.util.Objects;
-
 public class Passenger {
     // variables
     private String name;
     private boolean seatStatus;
+    private boolean randomSeat;
 
     // mutators
     public void setSeatStatus (int inSeat) {
@@ -19,6 +18,15 @@ public class Passenger {
         name = inName;
     }
 
+    public void setrandomSeat (int inSeat) {
+        if (inSeat == 1) {
+            randomSeat = true;
+        }
+        else {
+            randomSeat = false;
+        }       
+    }
+
     // getters
     public boolean getSeatStatus(){
         return seatStatus;
@@ -26,5 +34,9 @@ public class Passenger {
 
     public String getPassengerName() {
         return name;
+    }
+
+    public boolean getRandomSeat() {
+        return randomSeat;    
     }
 }
