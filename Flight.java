@@ -45,7 +45,7 @@ public class Flight {
         this.availableSeats = availableSeats;
     }
 
-     public boolean bookSeat(int seatNumber) {
+    public boolean bookSeat(int seatNumber) {
         if (seatNumber >= 0 && seatNumber < totalSeats && !seatsAvailable[seatNumber]) {
             seatsAvailable[seatNumber] = true;
             return true;  
