@@ -10,16 +10,22 @@ public class BookingSystem {
         ArrayList<String> destinationList = new ArrayList<String>();
         int[] manifest = new int[151];
 
+        // flight declrations
+        Flight newYorkNewYork = new Flight (111, "New York", 25);
+        Flight tokyoJapan = new Flight();
+        Flight parisFrance = new Flight();
+
         //code here
-        System.out.print("What is your destination?");
+        System.out.print("What is your destination?"); //Maybe make a print method for this???
         String destinationIn = scnr.nextLine();
         if (destinationList.contains(destinationIn)) {
-            if (destination.getAvailableSeats == true) {
+            if (Flight.getAvailableSeats > 0) {
                 System.out.print("Seat Available.");
             }
             else {
                 System.out.print("Seat Unavailable. Try a different destination!");
             }
         }
+
     }
 }
