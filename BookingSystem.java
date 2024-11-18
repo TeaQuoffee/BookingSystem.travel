@@ -24,10 +24,10 @@ public class BookingSystem {
         paris.setAvailableSeats(149);
 
         //code here
-        System.out.println("What is your destination?"); //Maybe make a print method for this???
-        System.out.println("NEW YORK\n TOKYO\n PARIS");       
+        System.out.println("What is your destination?");
+        System.out.println("______________\n\nNEW YORK\nTOKYO\nPARIS\n______________");       
         String destinationIn = scnr.nextLine();
-        if (destinationIn == "New York") {
+        if (destinationIn == "NEW YORK") {
             if (newYork.getAvailableSeats() > 0) {
                 System.out.print("Seat Available.");
             }
@@ -50,7 +50,20 @@ public class BookingSystem {
             else {
                 System.out.print("Seat Unavailable. Try a different destination!");
             }
-        }        
+        }
+        
+        System.out.println("Would you like to purchase a ticket? Y/N");
+        String purchanseAns = scnr.nextLine();
+        if (purchanseAns == "Y") ;   
+            if(destinationList.contains(destinationIn) && destinationIn == "NEW YORK") {
+                newYork.displayFlightDetails();
+            }
+            else if(destinationList.contains(destinationIn) && destinationIn == "TOKYO") {
+                tokyo.displayFlightDetails();
+            }
+            else if (destinationIn.contains(destinationIn) && destinationIn == "PARIS") {
+                paris.displayFlightDetails();
+            }                    
 
     }
 }
