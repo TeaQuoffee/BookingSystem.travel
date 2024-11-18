@@ -27,41 +27,41 @@ public class BookingSystem {
         System.out.println("What is your destination?");
         System.out.println("______________\n\nNEW YORK\nTOKYO\nPARIS\n______________");       
         String destinationIn = scnr.nextLine();
-        if (destinationIn == "NEW YORK") {
+        if (destinationIn .equals("NEW YORK")) {
             if (newYork.getAvailableSeats() > 0) {
-                System.out.print("Seat Available.");
+                System.out.println("Seat Available.");
             }
             else {
-                System.out.print("Seat Unavailable. Try a different destination!");
+                System.out.println("Seat Unavailable. Try a different destination!");
             }
         }
-        if (destinationIn == "TOKYO") {
+        if (destinationIn .equals("TOKYO")) {
             if (tokyo.getAvailableSeats() > 0) {
-                System.out.print("Seat Available.");
+                System.out.println("Seat Available.");
             }
             else {
-                System.out.print("Seat Unavailable. Try a different destination!");
+                System.out.println("Seat Unavailable. Try a different destination!");
             }
         }
-        if (destinationIn == "PARIS") {
+        if (destinationIn .equals("PARIS")) {
             if (paris.getAvailableSeats() > 0) {
-                System.out.print("Seat Available.");
+                System.out.println("Seat Available.");
             }
             else {
-                System.out.print("Seat Unavailable. Try a different destination!");
+                System.out.println("Seat Unavailable. Try a different destination!");
             }
         }
         
         System.out.println("Would you like to purchase a ticket? Y/N");
         String purchanseAns = scnr.nextLine();
-        if (purchanseAns == "Y") ;   
-            if(destinationList.contains(destinationIn) && destinationIn == "NEW YORK") {
+        if (purchanseAns .equals("Y")) ;   
+            if(destinationList.contains(destinationIn) && destinationIn.equals("NEW YORK")) {
                 newYork.displayFlightDetails();
             }
-            else if(destinationList.contains(destinationIn) && destinationIn == "TOKYO") {
+            else if(destinationList.contains(destinationIn) && destinationIn .equals("TOKYO")) {
                 tokyo.displayFlightDetails();
             }
-            else if (destinationIn.contains(destinationIn) && destinationIn == "PARIS") {
+            else if (destinationIn.contains(destinationIn) && destinationIn .equals("PARIS")) {
                 paris.displayFlightDetails();
             }                    
 

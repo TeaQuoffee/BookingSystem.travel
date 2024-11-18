@@ -10,6 +10,7 @@ public class Flight {
         this.destination = destination;
         this.totalSeats = totalSeats;
         this.seatsAvailable = new boolean[totalSeats];
+        this.availableSeats = totalSeats;
     }
     
     // Getter and Setter methods for flight details
@@ -48,6 +49,7 @@ public class Flight {
     public boolean bookSeat(int seatNumber) {
         if (seatNumber >= 0 && seatNumber < totalSeats && !seatsAvailable[seatNumber]) {
             seatsAvailable[seatNumber] = true;
+            availableSeats--;
             return true;  
         }
         return false;  
@@ -57,6 +59,7 @@ public class Flight {
         for (int i = 0; i < totalSeats; i++) {
             if (!seatsAvailable[i]) {  
                 seatsAvailable[i] = true;
+                availableSeats--;
                 return true;  
             }
         }
