@@ -63,15 +63,15 @@ public class Flight {
         return false; 
     }
 
-    public void cancelBooking() {
-        if (availableSeats < totalSeats) {
-            availableSeats++;
-            System.out.println("Booking canceled successfully on flight " + flightNumber);
-        } else {
-            System.out.println("No bookings to cancel on flight " + flightNumber);
+     public boolean cancelSeat(int seatNumber) {
+        if (seatNumber >= 0 && seatNumber < totalSeats && seatsAvailable[seatNumber]) {
+            seatsAvailable[seatNumber] = false; 
+            availableSeats++; 
+            return true;  
         }
+        return false; 
     }
-
+    
     public void displayFlightDetails() {
         System.out.println("Flight Number: " + flightNumber);
         System.out.println("Destination: " + destination);
