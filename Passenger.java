@@ -14,7 +14,7 @@ public class Passenger {
         }
     }   
 
-    public void setName (String inName) {
+    public void setPassengerName (String inName) {
         name = inName;
     }
 
