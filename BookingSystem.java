@@ -96,7 +96,7 @@ public class BookingSystem {
                 }
             }
         }
-        System.out.println("Thank you for using our system. Your flight from Atlanta to" + destinationIn + "Have a great day!");
+        System.out.println("Thank you for using our system. Your flight from Atlanta to" + " " + destinationIn + " has been booked." "Have a great day!");
         
     }
 }
