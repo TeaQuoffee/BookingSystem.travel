@@ -64,6 +64,10 @@ public class BookingSystem {
                         destinationIn = scnr.nextLine();
                     }
                 }
+                else {
+                    System.out.println(destinationIn + " does not exist or you may have mispelled your destination. Please Try again.");
+                    destinationIn = scnr.nextLine();
+                }
             }    
     
             
@@ -107,12 +111,14 @@ public class BookingSystem {
                     }
                 }
             }
-            System.out.println("Thank you for using our system. Your flight from Atlanta to" + destinationIn + "Have a great day!");
+            System.out.println("Thank you for using our system. Your flight from Atlanta to" + " " + destinationIn + " has been booked. Have a great day!");
     
         }
         else {
             System.out.println("Sorry to hear that. Cancelling your flight.");
             customer.removePass(name);
         }
+
+        
     }
 }
