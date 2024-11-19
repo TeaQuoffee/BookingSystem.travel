@@ -20,7 +20,7 @@ public class BookingSystem {
         destinationList.add("PARIS");
         Flight paris = new Flight("0003", "Paris, France", seatLimit);
         paris.setAvailableSeats(149);
-        System.out.println("What is your destination?");
+        System.out.println("Flying from Atlanta: what is your destination?");
         System.out.println("______________\n\nNEW YORK\nTOKYO\nPARIS\n______________");
         String destinationIn = scnr.nextLine();
 
@@ -96,7 +96,7 @@ public class BookingSystem {
                 }
             }
         }
-        System.out.println("Thank you for using our system. Have a great day!");
+        System.out.println("Thank you for using our system. Your flight from Atlanta to" + destinationIn + "Have a great day!");
         
     }
 }
