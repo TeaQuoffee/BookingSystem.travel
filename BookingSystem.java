@@ -11,7 +11,7 @@ public class BookingSystem {
 
         destinationList.add("NEW YORK");
         Flight newYork = new Flight("0001", "New York, USA", seatLimit);
-        newYork.setAvailableSeats(25);
+        newYork.setAvailableSeats(3);
 
         destinationList.add("TOKYO");
         Flight tokyo = new Flight("0002", "Tokyo, Japan", seatLimit);
@@ -19,7 +19,7 @@ public class BookingSystem {
 
         destinationList.add("PARIS");
         Flight paris = new Flight("0003", "Paris, France", seatLimit);
-        paris.setAvailableSeats(149);
+        paris.setAvailableSeats(7);
         System.out.println("Flying from Atlanta: what is your destination?");
         System.out.println("______________\n\nNEW YORK\nTOKYO\nPARIS\n______________");
         String destinationIn = scnr.nextLine();
