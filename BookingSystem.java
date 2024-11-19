@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class BookingSystem {
+    @SuppressWarnings("resource")
     public static void main(String[] args) {
         Scanner scnr = new Scanner(System.in);
         ArrayList<String> destinationList = new ArrayList<String>();
@@ -27,6 +28,7 @@ public class BookingSystem {
             if (destinationIn.equals("NEW YORK")) {
                 if (newYork.getAvailableSeats() > 0) {
                     System.out.println("Seat Available.");
+                    newYork.displayFlightDetails();
                     i--;
                 } else {
                     System.out.println("Seat Unavailable. Try a different destination!");
@@ -35,6 +37,7 @@ public class BookingSystem {
             } else if (destinationIn.equals("TOKYO")) {
                 if (tokyo.getAvailableSeats() > 0) {
                     System.out.println("Seat Available.");
+                    tokyo.displayFlightDetails();
                     i--;
                 } else {
                     System.out.println("Seat Unavailable. Try a different destination!");      
@@ -43,6 +46,7 @@ public class BookingSystem {
             } else if (destinationIn.equals("PARIS")) {
                 if (paris.getAvailableSeats() > 0) {
                     System.out.println("Seat Available.");
+                    paris.displayFlightDetails();
                     i--;
                 } else {
                     System.out.println("Seat Unavailable. Try a different destination!");
@@ -67,7 +71,7 @@ public class BookingSystem {
                         System.out.println("Sorry, no seats are available for booking.");
                     }
                 }
-                newYork.displayFlightDetails();
+                
             }
             else if (destinationIn.equals("TOKYO")) {
                 System.out.println("Do you want to book a seat? Y/N");
@@ -79,7 +83,6 @@ public class BookingSystem {
                         System.out.println("Sorry, no seats are available for booking.");
                     }
                 }
-                tokyo.displayFlightDetails();
             }
             else if (destinationIn.equals("PARIS")) {
                 System.out.println("Do you want to book a seat? Y/N");
@@ -91,10 +94,9 @@ public class BookingSystem {
                         System.out.println("Sorry, no seats are available for booking.");
                     }
                 }
-                paris.displayFlightDetails();
             }
-        } else {
-            System.out.println("Thank you for using our system. Have a great day!");
         }
+        System.out.println("Thank you for using our system. Have a great day!");
+        
     }
 }
