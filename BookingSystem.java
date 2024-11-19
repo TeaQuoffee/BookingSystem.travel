@@ -6,6 +6,7 @@ public class BookingSystem {
         Scanner scnr = new Scanner(System.in);
         ArrayList<String> destinationList = new ArrayList<String>();
         int seatLimit = 151;
+        int i = 1;
 
         destinationList.add("NEW YORK");
         Flight newYork = new Flight("0001", "New York, USA", seatLimit);
@@ -18,31 +19,40 @@ public class BookingSystem {
         destinationList.add("PARIS");
         Flight paris = new Flight("0003", "Paris, France", seatLimit);
         paris.setAvailableSeats(149);
-
-        newYork.displayFlightDetails();
         System.out.println("What is your destination?");
         System.out.println("______________\n\nNEW YORK\nTOKYO\nPARIS\n______________");
         String destinationIn = scnr.nextLine();
 
-        if (destinationIn.equals("NEW YORK")) {
-            if (newYork.getAvailableSeats() > 0) {
-                System.out.println("Seat Available.");
-            } else {
-                System.out.println("Seat Unavailable. Try a different destination!");
+        while(i > 0) {
+            if (destinationIn.equals("NEW YORK")) {
+                if (newYork.getAvailableSeats() > 0) {
+                    System.out.println("Seat Available.");
+                    i--;
+                } else {
+                    System.out.println("Seat Unavailable. Try a different destination!");
+                    destinationIn = scnr.nextLine();
+                }
+            } else if (destinationIn.equals("TOKYO")) {
+                if (tokyo.getAvailableSeats() > 0) {
+                    System.out.println("Seat Available.");
+                    i--;
+                } else {
+                    System.out.println("Seat Unavailable. Try a different destination!");      
+                    destinationIn = scnr.nextLine();        
+                }
+            } else if (destinationIn.equals("PARIS")) {
+                if (paris.getAvailableSeats() > 0) {
+                    System.out.println("Seat Available.");
+                    i--;
+                } else {
+                    System.out.println("Seat Unavailable. Try a different destination!");
+                    destinationIn = scnr.nextLine();
+                }
             }
-        } else if (destinationIn.equals("TOKYO")) {
-            if (tokyo.getAvailableSeats() > 0) {
-                System.out.println("Seat Available.");
-            } else {
-                System.out.println("Seat Unavailable. Try a different destination!");
-            }
-        } else if (destinationIn.equals("PARIS")) {
-            if (paris.getAvailableSeats() > 0) {
-                System.out.println("Seat Available.");
-            } else {
-                System.out.println("Seat Unavailable. Try a different destination!");
-            }
-        }
+        }    
+
+        
+        // purchasing tickets    
         System.out.println("Would you like to purchase a ticket? Y/N");
         String purchaseAns = scnr.nextLine();
 
